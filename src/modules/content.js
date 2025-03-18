@@ -91,4 +91,31 @@ let renderMenu = () => {
 
 let renderAbout = () => {
     domHelp.clearInnerHTML(section);
+
+    let title = domHelp.createElement({
+        el: 'h2', 
+        innerHTML: 'About us',
+    });
+
+    let sentence = domHelp.createElement({
+        el: 'p',
+        innerHTML: 'A real restaurant that exists and is cool, and is not fake or anything. Trust me.',
+    });
+
+    let container = domHelp.createElement({
+        el: 'div',
+        cls: 'container',
+    })
+
+    domHelp.renderElement({
+        child: [title, sentence],
+        parent: container,
+        isAdj: false,
+    });
+
+    domHelp.renderElement({
+        child: container,
+        parent: section,
+        isAdj: false,
+    })
 }
